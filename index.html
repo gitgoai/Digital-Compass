@@ -23,7 +23,7 @@
     <div class="absolute inset-0 flex items-center justify-center overflow-hidden z-0 opacity-10">
         <!-- Shield Icon for trust and protection -->
         <svg class="w-48 h-48 text-indigo-400 -rotate-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 0a10 10 1110 10-10 10 0 01-20 0z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 0a10 10 0 1110 10-10 10 0 01-20 0z" clip-rule="evenodd" />
             <path fill-rule="evenodd" d="M10 3a7 7 0 100 14 7 7 0 000-14zM10 1a9 9 0 110 18 9 9 0 010-18z" clip-rule="evenodd" />
             <path fill-rule="evenodd" d="M10 4a6 6 0 100 12 6 6 0 000-12zM10 2a8 8 0 110 16 8 8 0 010-16z" clip-rule="evenodd" />
             <path d="M10 0a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z" />
@@ -76,26 +76,33 @@
         </div>
 
         <!-- The main request form -->
-        <form id="requestForm" class="space-y-6">
+        <form action="https://formsubmit.co/Hamedm595@gmail.com" method="POST" class="space-y-6">
+
+            <!-- Honeypot field for spam protection -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Hidden field for the email subject line -->
+            <input type="hidden" name="_subject" value="New Inquiry from Digital Compass Website">
+            <!-- Acknowledge page to redirect to after submission -->
+            <input type="hidden" name="_next" value="https://gitgoai.github.io/Digital-Compass/?sent=true">
 
             <!-- Name Input Field -->
             <div>
                 <label for="fullName" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required
+                <input type="text" id="fullName" name="Full Name" required
                        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300">
             </div>
 
             <!-- Email Input Field -->
             <div>
                 <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
-                <input type="email" id="email" name="email" required
+                <input type="email" id="email" name="Email Address" required
                        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300">
             </div>
 
             <!-- What Problem are You Trying to Solve? -->
             <div>
                 <label for="problemDescription" class="block text-sm font-medium text-slate-700 mb-1">What problem are you trying to solve?</label>
-                <textarea id="problemDescription" name="problemDescription" rows="5" required
+                <textarea id="problemDescription" name="Problem Description" rows="5" required
                           class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                           placeholder="Please describe your specific challenge in detail."></textarea>
             </div>
@@ -103,7 +110,7 @@
             <!-- What Tools have you Tried? -->
             <div>
                 <label for="toolsTried" class="block text-sm font-medium text-slate-700 mb-1">What tools have you already tried (if any)?</label>
-                <textarea id="toolsTried" name="toolsTried" rows="3"
+                <textarea id="toolsTried" name="Tools Tried" rows="3"
                           class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                           placeholder="e.g., I've used Trello for project management but it's not working for our team."></textarea>
             </div>
@@ -111,7 +118,7 @@
             <!-- Budget -->
             <div>
                 <label for="budget" class="block text-sm font-medium text-slate-700 mb-1">Budget (if relevant)</label>
-                <input type="text" id="budget" name="budget"
+                <input type="text" id="budget" name="Budget"
                        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                        placeholder="e.g., $500, Flexible, or N/A">
             </div>
@@ -119,7 +126,7 @@
             <!-- Deadline or Urgency -->
             <div>
                 <label for="deadline" class="block text-sm font-medium text-slate-700 mb-1">Deadline or Urgency</label>
-                <input type="text" id="deadline" name="deadline"
+                <input type="text" id="deadline" name="Deadline"
                        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                        placeholder="e.g., End of month, ASAP, or No deadline">
             </div>
@@ -127,7 +134,7 @@
             <!-- Preferred Platforms -->
             <div>
                 <label for="platforms" class="block text-sm font-medium text-slate-700 mb-1">Preferred Platforms</label>
-                <input type="text" id="platforms" name="platforms"
+                <input type="text" id="platforms" name="Platforms"
                        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                        placeholder="e.g., Web, iOS app, Windows desktop, etc.">
             </div>
@@ -146,49 +153,17 @@
 
     </div>
 
+    <!-- The original JavaScript for the contact form is not needed since Formsubmit handles the submission. -->
     <script>
-        // Get the form and the message area elements
-        const requestForm = document.getElementById('requestForm');
-        const messageArea = document.getElementById('messageArea');
-
-        // Function to handle form submission
-        requestForm.addEventListener('submit', function(event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
-
-            // Clear any previous messages
-            messageArea.textContent = '';
-            messageArea.className = 'text-center text-sm font-medium';
-
-            // Get form data
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                problemDescription: document.getElementById('problemDescription').value,
-                toolsTried: document.getElementById('toolsTried').value,
-                budget: document.getElementById('budget').value,
-                deadline: document.getElementById('deadline').value,
-                platforms: document.getElementById('platforms').value
-            };
-
-            // Basic validation for required fields
-            if (!formData.fullName || !formData.email || !formData.problemDescription) {
-                messageArea.textContent = 'Please fill out all required fields (Name, Email, and Problem Description).';
-                messageArea.classList.add('text-red-600');
-                return;
+        // Check for URL parameter after submission and show a message
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('sent') === 'true') {
+                const messageArea = document.getElementById('messageArea');
+                messageArea.textContent = 'Your request has been received! We will begin our analysis and get back to you.';
+                messageArea.classList.add('text-green-600');
             }
-
-            // Simulate sending the data to a server
-            // In a real application, you would use 'fetch' or 'axios' here to send the data to your backend
-            console.log('Form data to be submitted:', formData);
-
-            // Display a success message to the user
-            messageArea.textContent = 'Your request has been received! We will begin our analysis and get back to you with a solution teaser.';
-            messageArea.classList.add('text-green-600');
-
-            // Clear the form fields after successful submission
-            requestForm.reset();
-        });
+        };
     </script>
 </body>
 </html>
