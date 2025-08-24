@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Compass | Your Guide to Clarity</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for the 'Inter' font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Container for background trust badges -->
+    <!-- These badges are purely for aesthetic and trust-building purposes. -->
+    <div class="absolute inset-0 flex items-center justify-center overflow-hidden z-0 opacity-10">
+        <!-- Shield Icon for trust and protection -->
+        <svg class="w-48 h-48 text-indigo-400 -rotate-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 0a10 10 1110 10-10 10 0 01-20 0z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M10 3a7 7 0 100 14 7 7 0 000-14zM10 1a9 9 0 110 18 9 9 0 010-18z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M10 4a6 6 0 100 12 6 6 0 000-12zM10 2a8 8 0 110 16 8 8 0 010-16z" clip-rule="evenodd" />
+            <path d="M10 0a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z" />
+        </svg>
+
+        <!-- Checkmark Icon for clarity and completion -->
+        <svg class="w-64 h-64 text-indigo-400 rotate-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+
+        <!-- Lock Icon for security and confidence -->
+        <svg class="w-56 h-56 text-indigo-400 -rotate-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 016 0h2a5 5 0 00-5-5z" />
+        </svg>
+    </div>
+
+    <!-- Main container for the website content -->
+    <!-- Added z-10 to ensure this content is on top of the background badges -->
+    <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-10 max-w-2xl w-full relative z-10">
+
+        <!-- Header section with title and description -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-slate-800">Digital Compass</h1>
+            <p class="mt-2 text-slate-600 text-lg">
+                We're your guide to finding the right digital tools, whether you're streamlining a business workflow, managing a personal project, or building a new skill. Let us handle the research so you can focus on your goals.
+            </p>
+        </div>
+
+        <!-- Section explaining the value proposition -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">What makes Digital Compass the perfect choice?</h2>
+            <ul class="text-md text-slate-700 space-y-2 list-none">
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
+                    <span class="font-medium">Saves time:</span> No need to search endlessly for tools.
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
+                    <span class="font-medium">Saves money:</span> We recommend free and low-cost solutions.
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
+                    <span class="font-medium">Reduces stress:</span> We simplify complex problems.
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
+                    <span class="font-medium">Feels personal:</span> Every solution is tailored to your exact needs.
+                </li>
+            </ul>
+        </div>
+
+        <!-- The main request form -->
+        <form id="requestForm" class="space-y-6">
+
+            <!-- Name Input Field -->
+            <div>
+                <label for="fullName" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required
+                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300">
+            </div>
+
+            <!-- Email Input Field -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required
+                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300">
+            </div>
+
+            <!-- What Problem are You Trying to Solve? -->
+            <div>
+                <label for="problemDescription" class="block text-sm font-medium text-slate-700 mb-1">What problem are you trying to solve?</label>
+                <textarea id="problemDescription" name="problemDescription" rows="5" required
+                          class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                          placeholder="Please describe your specific challenge in detail."></textarea>
+            </div>
+
+            <!-- What Tools have you Tried? -->
+            <div>
+                <label for="toolsTried" class="block text-sm font-medium text-slate-700 mb-1">What tools have you already tried (if any)?</label>
+                <textarea id="toolsTried" name="toolsTried" rows="3"
+                          class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                          placeholder="e.g., I've used Trello for project management but it's not working for our team."></textarea>
+            </div>
+
+            <!-- Budget -->
+            <div>
+                <label for="budget" class="block text-sm font-medium text-slate-700 mb-1">Budget (if relevant)</label>
+                <input type="text" id="budget" name="budget"
+                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                       placeholder="e.g., $500, Flexible, or N/A">
+            </div>
+
+            <!-- Deadline or Urgency -->
+            <div>
+                <label for="deadline" class="block text-sm font-medium text-slate-700 mb-1">Deadline or Urgency</label>
+                <input type="text" id="deadline" name="deadline"
+                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                       placeholder="e.g., End of month, ASAP, or No deadline">
+            </div>
+
+            <!-- Preferred Platforms -->
+            <div>
+                <label for="platforms" class="block text-sm font-medium text-slate-700 mb-1">Preferred Platforms</label>
+                <input type="text" id="platforms" name="platforms"
+                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 border-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                       placeholder="e.g., Web, iOS app, Windows desktop, etc.">
+            </div>
+
+            <!-- Message Area for success or error messages -->
+            <div id="messageArea" class="text-center text-sm font-medium"></div>
+
+            <!-- Submit Button -->
+            <div class="pt-4">
+                <button type="submit"
+                        class="w-full flex justify-center items-center py-3 px-6 border border-transparent rounded-lg shadow-sm text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300">
+                    Submit Request
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        // Get the form and the message area elements
+        const requestForm = document.getElementById('requestForm');
+        const messageArea = document.getElementById('messageArea');
+
+        // Function to handle form submission
+        requestForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Clear any previous messages
+            messageArea.textContent = '';
+            messageArea.className = 'text-center text-sm font-medium';
+
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                problemDescription: document.getElementById('problemDescription').value,
+                toolsTried: document.getElementById('toolsTried').value,
+                budget: document.getElementById('budget').value,
+                deadline: document.getElementById('deadline').value,
+                platforms: document.getElementById('platforms').value
+            };
+
+            // Basic validation for required fields
+            if (!formData.fullName || !formData.email || !formData.problemDescription) {
+                messageArea.textContent = 'Please fill out all required fields (Name, Email, and Problem Description).';
+                messageArea.classList.add('text-red-600');
+                return;
+            }
+
+            // Simulate sending the data to a server
+            // In a real application, you would use 'fetch' or 'axios' here to send the data to your backend
+            console.log('Form data to be submitted:', formData);
+
+            // Display a success message to the user
+            messageArea.textContent = 'Your request has been received! We will begin our analysis and get back to you with a solution teaser.';
+            messageArea.classList.add('text-green-600');
+
+            // Clear the form fields after successful submission
+            requestForm.reset();
+        });
+    </script>
+</body>
+</html>
