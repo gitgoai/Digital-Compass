@@ -10,9 +10,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the carousel animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Custom styles for the scroll-in animation */
+        .scroll-in-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-in-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom styles for the FAQ accordion functionality */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 200px; /* Adjust this value as needed to fit the content */
+        }
+    </style>
 </head>
 <!-- Applying the 'Inter' font directly to the body using a Tailwind class -->
-<body class="bg-slate-100 font-inter flex items-center justify-center min-h-screen p-4">
+<!-- The background has been changed to a subtle gradient for a more professional look -->
+<body class="bg-gradient-to-br from-slate-50 to-slate-200 font-inter flex items-center justify-center min-h-screen p-4">
 
     <!-- Main container for the website content -->
     <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-10 max-w-2xl w-full relative z-10">
@@ -21,7 +54,6 @@
         <div class="text-center mb-8">
             <div class="flex flex-col items-center justify-center mb-4">
                 <!-- Main Compass Logo -->
-                <!-- The size of the logo has been increased from w-28 h-28 to w-40 h-40 -->
                 <img src="https://raw.githubusercontent.com/gitgoai/Digital-Compass/main/undraw_goals_0pov.svg" alt="Digital Compass Logo" class="w-40 h-40 mx-auto mb-4" />
 
                 <h1 class="text-4xl font-bold text-slate-800 mt-2">Digital Compass</h1>
@@ -32,43 +64,129 @@
         </div>
 
         <!-- Collaboration Logo -->
-        <!-- The size of the logo has been reduced from max-w-sm to max-w-xs -->
         <img src="https://raw.githubusercontent.com/gitgoai/Digital-Compass/main/undraw_team-collaboration_phnf.svg" alt="A Collaborative Approach Illustration" class="w-full h-auto max-w-xs mx-auto mb-8" />
 
-        <!-- Section explaining the value proposition -->
-        <div class="mb-8">
+        <!-- Section explaining the value proposition with scroll-in animation -->
+        <div class="mb-8" id="value-proposition">
             <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">What makes Digital Compass the perfect choice?</h2>
             <ul class="text-md text-slate-700 space-y-4 list-none">
-                <!-- Each list item has been restructured to have two lines for better readability -->
-                <li class="flex flex-col">
+                <!-- Each list item has been restructured to have two lines for better readability and added scroll-in animation -->
+                <li class="flex flex-col scroll-in-item">
                     <div class="flex items-center mb-1">
                         <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
-                        <span class="font-medium">Save time:</span>
+                        <p class="font-bold">Save Time: Stop endlessly searching for tools.</p>
                     </div>
-                    <p class="pl-7 text-sm">No need to search endlessly for tools.</p>
                 </li>
-                <li class="flex flex-col">
+                <li class="flex flex-col scroll-in-item">
                     <div class="flex items-center mb-1">
                         <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
-                        <span class="font-medium">Save money:</span>
+                        <p class="font-bold">Save Money: Get free and low-cost solutions.</p>
                     </div>
-                    <p class="pl-7 text-sm">We recommend free and low-cost solutions.</p>
                 </li>
-                <li class="flex flex-col">
+                <li class="flex flex-col scroll-in-item">
                     <div class="flex items-center mb-1">
                         <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
-                        <span class="font-medium">Reduce stress:</span>
+                        <p class="font-bold">Reduce Stress: Simplify complex problems with ease.</p>
                     </div>
-                    <p class="pl-7 text-sm">We simplify complex problems.</p>
                 </li>
-                <li class="flex flex-col">
+                <li class="flex flex-col scroll-in-item">
                     <div class="flex items-center mb-1">
                         <svg class="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
-                        <span class="font-medium">Feels personal:</span>
+                        <p class="font-bold">Feel Personal: Your solution is tailored to your exact needs.</p>
                     </div>
-                    <p class="pl-7 text-sm">Every solution is tailored to your exact needs.</p>
                 </li>
             </ul>
+        </div>
+
+        <!-- How it Works section to clarify the process with scroll-in animation -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">How It Works</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <!-- Step 1 -->
+                <div class="p-4 rounded-lg bg-gray-50 border border-gray-200 scroll-in-item">
+                    <svg class="w-10 h-10 text-indigo-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <p class="font-semibold text-slate-800">1. Submit Your Request</p>
+                    <p class="text-sm text-slate-600 mt-1">Tell us your problem using the form below.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="p-4 rounded-lg bg-gray-50 border border-gray-200 scroll-in-item">
+                    <svg class="w-10 h-10 text-indigo-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <p class="font-semibold text-slate-800">2. We Find Your Solution</p>
+                    <p class="text-sm text-slate-600 mt-1">Our team researches and analyzes your needs.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="p-4 rounded-lg bg-gray-50 border border-gray-200 scroll-in-item">
+                    <svg class="w-10 h-10 text-indigo-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <p class="font-semibold text-slate-800">3. Receive Your Report</p>
+                    <p class="text-sm text-slate-600 mt-1">We'll send you a personalized solution report.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Automated Testimonial Carousel -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">What Our Clients Say</h2>
+            <div id="testimonial-carousel" class="relative overflow-hidden w-full h-auto bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <!-- Testimonial slides will be populated by JavaScript -->
+                <div id="testimonial-container" class="relative">
+                    <!-- The testimonials themselves will be here -->
+                </div>
+                
+                <!-- Navigation buttons -->
+                <button id="prev-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-300 focus:outline-none">
+                    <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-300 focus:outline-none">
+                    <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+
+                <!-- Navigation dots -->
+                <div id="dot-container" class="flex justify-center mt-4 space-x-2">
+                </div>
+            </div>
+        </div>
+        
+        <!-- New FAQ Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">Frequently Asked Questions</h2>
+            <div id="faq-container" class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-4 text-left font-semibold text-slate-700 focus:outline-none">
+                        <span>How much does a solution report cost?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content p-4 text-sm text-slate-600 border-t border-gray-200">
+                        <p>We work on a case-by-case basis. After you submit your request, we will review your needs and provide a quote before we begin our research. Initial consultations are always free.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-4 text-left font-semibold text-slate-700 focus:outline-none">
+                        <span>How long does it take to get my report?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content p-4 text-sm text-slate-600 border-t border-gray-200">
+                        <p>The timeline depends on the complexity of your request. Most reports are delivered within 5-7 business days after we confirm the project details and payment.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-4 text-left font-semibold text-slate-700 focus:outline-none">
+                        <span>What if I'm not happy with the recommendations?</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content p-4 text-sm text-slate-600 border-t border-gray-200">
+                        <p>We stand by our work. If you're not satisfied, we offer a revision period to refine the recommendations and ensure they align with your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Call to Action section before the form -->
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2">Ready to find your solution?</h2>
+            <p class="text-lg text-slate-600">Fill out the form below to get started on your personalized report.</p>
         </div>
         
         <!-- The main request form -->
@@ -142,11 +260,155 @@
             <div class="pt-4">
                 <button type="submit"
                         class="w-full flex justify-center items-center py-3 px-6 border border-transparent rounded-lg shadow-sm text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300">
-                    Submit Request
+                    Get Your Solution
                 </button>
             </div>
         </form>
 
     </div>
+
+    <!-- JavaScript for the testimonial carousel and new scroll-in animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Testimonial carousel logic
+            const testimonials = [
+                {
+                    quote: "Digital Compass was a lifesaver! They helped us navigate a sea of software options and find the perfect tool to streamline our project management. The solution they provided was spot-on and saved us countless hours.",
+                    name: "Jane Doe",
+                    title: "CEO of InnovateCorp"
+                },
+                {
+                    quote: "I was overwhelmed by the options for building my personal website. Digital Compass provided a clear, concise recommendation that fit my budget and skill level. I couldn't be happier with the result!",
+                    name: "John Smith",
+                    title: "Freelance Designer"
+                },
+                {
+                    quote: "Our team needed a better way to collaborate remotely. Digital Compass quickly identified our pain points and suggested a powerful, low-cost solution that completely changed how we work for the better.",
+                    name: "Emily White",
+                    title: "Operations Manager"
+                },
+                {
+                    quote: "Finding the right SEO tool was a nightmare until I found this service. The personalized report was exactly what I needed to make an informed decision without feeling pressured.",
+                    name: "Mike Johnson",
+                    title: "Marketing Consultant"
+                }
+            ];
+
+            const container = document.getElementById('testimonial-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dotContainer = document.getElementById('dot-container');
+            let currentTestimonial = 0;
+            let interval;
+
+            const renderTestimonial = (index) => {
+                const testimonial = testimonials[index];
+                container.innerHTML = `
+                    <div class="fade-in">
+                        <blockquote class="text-md text-slate-700 italic text-center">
+                            "${testimonial.quote}"
+                        </blockquote>
+                        <div class="mt-4 text-right text-sm font-semibold text-slate-600">
+                            - ${testimonial.name}, ${testimonial.title}
+                        </div>
+                    </div>
+                `;
+            };
+
+            const updateDots = (index) => {
+                dotContainer.innerHTML = '';
+                testimonials.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'cursor-pointer', 'transition-colors', 'duration-300');
+                    if (i === index) {
+                        dot.classList.add('bg-indigo-600');
+                    } else {
+                        dot.classList.add('bg-slate-300', 'hover:bg-slate-400');
+                    }
+                    dot.addEventListener('click', () => {
+                        showTestimonial(i);
+                        resetInterval();
+                    });
+                    dotContainer.appendChild(dot);
+                });
+            };
+
+            const showTestimonial = (index) => {
+                currentTestimonial = (index + testimonials.length) % testimonials.length;
+                renderTestimonial(currentTestimonial);
+                updateDots(currentTestimonial);
+            };
+
+            prevBtn.addEventListener('click', () => {
+                showTestimonial(currentTestimonial - 1);
+                resetInterval();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                showTestimonial(currentTestimonial + 1);
+                resetInterval();
+            });
+
+            const resetInterval = () => {
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    showTestimonial(currentTestimonial + 1);
+                }, 5000);
+            };
+
+            showTestimonial(0);
+            resetInterval();
+
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetId = entry.target.id;
+                        if (targetId === 'value-proposition' || targetId === 'how-it-works') {
+                            const items = entry.target.querySelectorAll('.scroll-in-item');
+                            items.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.classList.add('active');
+                                }, index * 200); // Stagger the animation
+                            });
+                            observer.unobserve(entry.target); // Unobserve after the animation
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            // Target the sections for the observer
+            const valuePropositionSection = document.getElementById('value-proposition');
+            const howItWorksSection = document.querySelector('.grid.gap-6');
+            if (valuePropositionSection) {
+                observer.observe(valuePropositionSection);
+            }
+            if (howItWorksSection) {
+                howItWorksSection.id = 'how-it-works'; // Give it an ID to be targeted
+                observer.observe(howItWorksSection);
+            }
+
+            // FAQ accordion logic
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const svg = button.querySelector('svg');
+
+                    // Toggle the 'open' class on the content
+                    content.classList.toggle('open');
+                    
+                    // Toggle the rotation of the SVG icon
+                    if (content.classList.contains('open')) {
+                        svg.style.transform = 'rotate(180deg)';
+                    } else {
+                        svg.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
